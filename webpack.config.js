@@ -7,7 +7,8 @@ var config = {
     },
     output: {
         path: './build',
-        filename: 'bundle.js'
+        filename: '[name].bundle.js',
+        chunkFilename: "[id].chunk.js"
     },
     module: {
         loaders: [
@@ -40,14 +41,15 @@ var config = {
     },
 
     plugins: [
-        new webpack.optimize.DedupePlugin(),
+        // new webpack.optimize.DedupePlugin(),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
             filename: 'vendor.bundle.js'
-        }),
-        new webpack.DefinePlugin({
-          ON_DEMO: process.env.NODE_ENV === 'demo'
         })
+        // ,
+        // new webpack.DefinePlugin({
+        //   ON_DEMO: process.env.NODE_ENV === 'demo'
+        // })
     ]
 };
 

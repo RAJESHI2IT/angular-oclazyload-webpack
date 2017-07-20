@@ -2,7 +2,6 @@ export default (ngModule, Angular) => {
     ngModule.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', function ($stateProvider, $locationProvider, $urlRouterProvider) {
         // $locationProvider.html5Mode(true);
         // $locationProvider.hashPrefix('!');
-
         $urlRouterProvider.otherwise('/page1');
 
         $stateProvider.state('page1', {
@@ -50,7 +49,6 @@ export default (ngModule, Angular) => {
                         });
                         deferred.resolve(module);
                     });
-
                     return deferred.promise;
                 }]
             }
@@ -76,12 +74,9 @@ export default (ngModule, Angular) => {
                         });
                         deferred.resolve(module);
                     });
-
                     return deferred.promise;
                 }]
             }
         });
     }]);
-    
 }
-
